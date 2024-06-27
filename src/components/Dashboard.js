@@ -3,12 +3,17 @@ import Link from 'next/link';
 
 const Dashboard = () => {
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <Link href="/create-project">Create Project</Link>
-      <Link href="/projects">View Projects</Link>
-      <Link href="/profile">View Profile</Link>
+    <div className="dashboard">
+    <h1 className="dashboard-title">Dashboard</h1>
+    <div className="card">
+      <h2 className="card-title">Project Overview</h2>
+      <p className="card-content">Details about current projects and tasks.</p>
     </div>
+    <div className="card">
+      <h2 className="card-title">Recent Activity</h2>
+      <p className="card-content">Recent updates and activity logs.</p>
+    </div>
+  </div>
   );
 };
 
