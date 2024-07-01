@@ -280,7 +280,7 @@ const HomePage = () => {
               <div className="card py-4 h-100">
                 <div className="card-body text-center">
                   <i className="fas fa-map-marked-alt text-primary mb-2"></i>
-                  <h4 className="text-uppercase m-0">Founder's Names</h4>
+                  <h4 className="text-uppercase m-0">Founder&aposs Names</h4>
                   <hr className="my-4 mx-auto" />
                   <div className="small text-black-50">
                     Samuel Sylvester <br></br> Arthur Tchaye
@@ -292,7 +292,7 @@ const HomePage = () => {
               <div className="card py-4 h-100">
                 <div className="card-body text-center">
                   <i className="fas fa-envelope text-primary mb-2"></i>
-                  <h4 className="text-uppercase m-0">Founder's Emails</h4>
+                  <h4 className="text-uppercase m-0">Founder&aposs Emails</h4>
                   <hr className="my-4 mx-auto" />
                   <div className="small text-black-50">
                     <a href="#!">samsylvester09@gmail.com</a><br></br><a href="#!">samsylvester09@gmail.com</a>
