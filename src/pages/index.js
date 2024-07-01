@@ -1,66 +1,67 @@
-import React from 'react';
-import Link from 'next/link';
-import '../app/index.css';
+import React from "react";
+import Link from "next/link";
+import "../app/index.css";
 
 const HomePage = () => {
   return (
-    <div className="container">
-      <header className="header">
-        <nav className="navbar">
-          <Link href="#intro" className="nav-link">Intro</Link>
-          <Link href="#features" className="nav-link">Features</Link>
-          <Link href="#about" className="nav-link">About</Link>
-          <Link href="/dashboard" className="nav-link">Go to App</Link>
-        </nav>
+    <div>
+      <nav
+        className="navbar navbar-expand-lg navbar-light fixed-top"
+        id="mainNav"
+      >
+        <div className="container px-4 px-lg-5">
+          <a className="navbar-brand" href="#page-top">
+            GovTech Connect
+          </a>
+          <button
+            className="navbar-toggler navbar-toggler-right"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            Menu
+            <i className="fas fa-bars"></i>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarResponsive">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <a className="nav-link" href="#about">
+                  About
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#projects">
+                  Projects
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#signup">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <header className="masthead">
+        <div className="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+          <div className="d-flex justify-content-center">
+            <div className="text-center">
+              <h1 className="mx-auto my-0 text-uppercase">GovTech</h1>
+              <h2 className="text-white-50 mx-auto mt-2 mb-5">
+                Bridging the gap between government projects and emerging tech talent.
+              </h2>
+              <a className="btn btn-primary" href="#about">
+                Get Started
+              </a>
+            </div>
+          </div>
+        </div>
       </header>
-
-      <section id="intro" className="intro-section">
-        <img src="/cover-image.jpg" alt="Cover" className="cover-image" />
-        <h1 className="project-name">GovTech Connect</h1>
-        <p className="project-tagline">Bridging the gap between government projects and emerging tech talent.</p>
-        <Link href="/dashboard" className="cta-button">Get Started</Link>
-      </section>
-
-      <section id="features" className="features-section">
-        <h2 className="section-title">Key Features</h2>
-        <div className="feature">
-          <img src="/feature1.jpg" alt="Feature 1" className="feature-image" />
-          <h3 className="feature-name">Feature 1</h3>
-          <p className="feature-description">Description of feature 1.</p>
-        </div>
-        <div className="feature">
-          <img src="/feature2.jpg" alt="Feature 2" className="feature-image" />
-          <h3 className="feature-name">Feature 2</h3>
-          <p className="feature-description">Description of feature 2.</p>
-        </div>
-        <div className="feature">
-          <img src="/feature3.jpg" alt="Feature 3" className="feature-image" />
-          <h3 className="feature-name">Feature 3</h3>
-          <p className="feature-description">Description of feature 3.</p>
-        </div>
-      </section>
-
-      <section id="about" className="about-section">
-        <h2 className="section-title">About</h2>
-        <p className="about-description">
-          The inspiration for this project came from a desire to provide newbie tech professionals with real-world experience while assisting government agencies with their tech needs. The project timeline includes planning, design, development, and testing phases, all aimed at creating a robust and user-friendly platform. This project is part of my Portfolio Project for Holberton School. 
-        </p>
-        <div className="team-links">
-          <div className="team-member">
-            <h3 className="team-name">Sylvester Samuel</h3>
-            <Link href="https://linkedin.com/in/ninestars" target="_blank" className="team-link">LinkedIn</Link>
-            <Link href="https://github.com/Sylvester009" target="_blank" className="team-link">GitHub</Link>
-            <Link href="https://twitter.com/sylvester-samuel" target="_blank" className="team-link">Twitter</Link>
-          </div>
-          <div className="team-member">
-            <h3 className="team-name">Arthur Tchaye</h3>
-            <Link href="https://linkedin.com/in/arthur-tchaye" target="_blank" className="team-link">LinkedIn</Link>
-            <Link href="https://github.com/arthur-tchaye" target="_blank" className="team-link">GitHub</Link>
-            <Link href="https://twitter.com/arthur-tchaye" target="_blank" className="team-link">Twitter</Link>
-          </div>
-        </div>
-        <Link href="https://github.com/your-repo" target="_blank" className="repo-link">GitHub Repository</Link>
-      </section>
     </div>
   );
 };
