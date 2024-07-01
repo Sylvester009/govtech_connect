@@ -7670,13 +7670,9 @@ textarea.form-control-lg {
   margin-left: 0.25rem !important;
 }
 
-.mx-2 {
-  margin-right: 0.5rem !important;
-  margin-left: 0.5rem !important;
-}
-
-.mx-2 img{
-  margin: auto;
+#submitButton a{
+color: #fff;
+text-decoration: none;
 }
 
 .mx-3 {

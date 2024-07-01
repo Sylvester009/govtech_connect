@@ -1,20 +1,21 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import "../app/index.css";
+import { dashboard } from "./dashboard.js";
+import { signup } from "./login.js";
 
 const HomePage = () => {
-
   useEffect(() => {
     // Navbar shrink function
     const navbarShrink = () => {
-      const navbarCollapsible = document.body.querySelector('#mainNav');
+      const navbarCollapsible = document.body.querySelector("#mainNav");
       if (!navbarCollapsible) {
         return;
       }
       if (window.scrollY === 0) {
-        navbarCollapsible.classList.remove('navbar-shrink');
+        navbarCollapsible.classList.remove("navbar-shrink");
       } else {
-        navbarCollapsible.classList.add('navbar-shrink');
+        navbarCollapsible.classList.add("navbar-shrink");
       }
     };
 
@@ -22,14 +23,16 @@ const HomePage = () => {
     navbarShrink();
 
     // Shrink the navbar when page is scrolled
-    document.addEventListener('scroll', navbarShrink);
+    document.addEventListener("scroll", navbarShrink);
 
     // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = Array.from(document.querySelectorAll('#navbarResponsive .nav-link'));
-    responsiveNavItems.map(responsiveNavItem => {
-      responsiveNavItem.addEventListener('click', () => {
-        if (window.getComputedStyle(navbarToggler).display !== 'none') {
+    const navbarToggler = document.body.querySelector(".navbar-toggler");
+    const responsiveNavItems = Array.from(
+      document.querySelectorAll("#navbarResponsive .nav-link")
+    );
+    responsiveNavItems.map((responsiveNavItem) => {
+      responsiveNavItem.addEventListener("click", () => {
+        if (window.getComputedStyle(navbarToggler).display !== "none") {
           navbarToggler.click();
         }
       });
@@ -37,16 +40,15 @@ const HomePage = () => {
 
     // Clean up event listeners when component unmounts
     return () => {
-      document.removeEventListener('scroll', navbarShrink);
-      responsiveNavItems.forEach(responsiveNavItem => {
-        responsiveNavItem.removeEventListener('click', () => {
-          if (window.getComputedStyle(navbarToggler).display !== 'none') {
+      document.removeEventListener("scroll", navbarShrink);
+      responsiveNavItems.forEach((responsiveNavItem) => {
+        responsiveNavItem.removeEventListener("click", () => {
+          if (window.getComputedStyle(navbarToggler).display !== "none") {
             navbarToggler.click();
           }
         });
       });
     };
-
   }, []);
 
   return (
@@ -56,7 +58,7 @@ const HomePage = () => {
         id="mainNav"
       >
         <div className="container px-4 px-lg-5">
-          <a className="navbar-brand" href="#page-top">
+          <a className="navbar-brand" href="#">
             GovTech Connect
           </a>
           <button
@@ -79,13 +81,13 @@ const HomePage = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#projects">
-                  Projects
+                <a className="nav-link" href="dashboard">
+                  Dashboard
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#signup">
-                  Contact
+                <a className="nav-link" href="dashboard">
+                  Signup / Login
                 </a>
               </li>
             </ul>
@@ -138,11 +140,11 @@ const HomePage = () => {
             </div>
             <div className="col-xl-4 col-lg-5">
               <div className="featured-text text-center text-lg-left">
-                <h4>Shoreline</h4>
+                <h4>Streamlined</h4>
                 <p className="text-black-50 mb-0">
-                  Grayscale is open source and MIT licensed. This means you can
-                  use it for any project - even commercial projects! Download
-                  it, customize it, and publish your website!
+                  Get matched with suitable projects based on skills,
+                  experience, and availability. Streamline the process of
+                  finding the right people for specific projects.
                 </p>
               </div>
             </div>
@@ -160,10 +162,12 @@ const HomePage = () => {
               <div className="bg-black text-center h-100 project">
                 <div className="d-flex h-100">
                   <div className="project-text w-100 my-auto text-center text-lg-left">
-                    <h4 className="text-white">Misty</h4>
+                    <h4 className="text-white">Collaborate</h4>
                     <p className="mb-0 text-white-50">
-                      An example of where you can put an image of a project, or
-                      anything else, along with a description.
+                      collaborate on projects directly both as tech
+                      professionals and government agencies making use of tools
+                      for for project management, communication, and document
+                      sharing.
                     </p>
                   </div>
                 </div>
@@ -183,11 +187,11 @@ const HomePage = () => {
               <div className="bg-black text-center h-100 project">
                 <div className="d-flex h-100">
                   <div className="project-text w-100 my-auto text-center text-lg-right">
-                    <h4 className="text-white">Mountains</h4>
+                    <h4 className="text-white">Learn and Grow</h4>
                     <p className="mb-0 text-white-50">
-                      Another example of a project with its respective
-                      description. These sections work well responsively as
-                      well!
+                      All learning materials, training programs, and resources
+                      for tech professionals to improve their skills thereby
+                      making them more valuable to government projects.
                     </p>
                   </div>
                 </div>
@@ -198,80 +202,126 @@ const HomePage = () => {
       </section>
 
       <section className="signup-section" id="signup">
-            <div className="container px-4 px-lg-5">
-                <div className="row gx-4 gx-lg-5">
-                    <div className="col-md-10 col-lg-8 mx-auto text-center">
-                        <i className="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                        <h2 className="text-white mb-5">Subscribe to receive updates!</h2>
-                        
-                        <form className="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            
-                            <div className="row input-group-newsletter">
-                                <div className="col"><input className="form-control" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
-                                <div className="col-auto"><button className="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
-                            </div>
-                            <div className="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">An email is required.</div>
-                            <div className="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Email is not valid.</div>
-                            
-                            <div className="d-none" id="submitSuccessMessage">
-                                <div className="text-center mb-3 mt-2 text-white">
-                                    <div className="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            
-                            <div className="d-none" id="submitErrorMessage"><div className="text-center text-danger mb-3 mt-2">Error sending message!</div></div>
-                        </form>
-                    </div>
+        <div className="container px-4 px-lg-5">
+          <div className="row gx-4 gx-lg-5">
+            <div className="col-md-10 col-lg-8 mx-auto text-center">
+              <i className="far fa-paper-plane fa-2x mb-2 text-white"></i>
+              <h2 className="text-white mb-5">To get started on your journey</h2>
+
+              <form
+                className="form-signup"
+                id="contactForm"
+                data-sb-form-api-token="API_TOKEN"
+              >
+                <div className="row input-group-newsletter">
+                  <div className="col">
+                    <input
+                      className="form-control"
+                      id="emailAddress"
+                      type="email"
+                      placeholder="Enter email address..."
+                      aria-label="Enter email address..."
+                      data-sb-validations="required,email"
+                    />
+                  </div>
+                  <div className="col-auto">
+                 
+                    <button
+                      className="btn btn-primary disabled"
+                      id="submitButton"
+                      type="submit"
+                    >
+                    <a href="signup">
+                      Sign up here
+                      </a>
+                    </button>
+                   
+                  </div>
                 </div>
+                <div
+                  className="invalid-feedback mt-2"
+                  data-sb-feedback="emailAddress:required"
+                >
+                  An email is required.
+                </div>
+                <div
+                  className="invalid-feedback mt-2"
+                  data-sb-feedback="emailAddress:email"
+                >
+                  Email is not valid.
+                </div>
+
+                <div className="d-none" id="submitSuccessMessage">
+                  <div className="text-center mb-3 mt-2 text-white">
+                    <div className="fw-bolder">Form submission successful!</div>
+                    To activate this form, sign up at
+                    <br />
+                    <a href="https://startbootstrap.com/solution/contact-forms">
+                      https://startbootstrap.com/solution/contact-forms
+                    </a>
+                  </div>
+                </div>
+
+                <div className="d-none" id="submitErrorMessage">
+                  <div className="text-center text-danger mb-3 mt-2">
+                    Error sending message!
+                  </div>
+                </div>
+              </form>
             </div>
-        </section>
-        
-        <section className="contact-section bg-black">
-            <div className="container px-4 px-lg-5">
-                <div className="row gx-4 gx-lg-5">
-                    <div className="col-md-4 mb-3 mb-md-0">
-                        <div className="card py-4 h-100">
-                            <div className="card-body text-center">
-                                <i className="fas fa-map-marked-alt text-primary mb-2"></i>
-                                <h4 className="text-uppercase m-0">Address</h4>
-                                <hr className="my-4 mx-auto" />
-                                <div className="small text-black-50">4923 Market Street, Orlando FL</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-4 mb-3 mb-md-0">
-                        <div className="card py-4 h-100">
-                            <div className="card-body text-center">
-                                <i className="fas fa-envelope text-primary mb-2"></i>
-                                <h4 className="text-uppercase m-0">Email</h4>
-                                <hr className="my-4 mx-auto" />
-                                <div className="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-4 mb-3 mb-md-0">
-                        <div className="card py-4 h-100">
-                            <div className="card-body text-center">
-                                <i className="fas fa-mobile-alt text-primary mb-2"></i>
-                                <h4 className="text-uppercase m-0">Phone</h4>
-                                <hr className="my-4 mx-auto" />
-                                <div className="small text-black-50">+1 (555) 902-8832</div>
-                            </div>
-                        </div>
-                    </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="contact-section bg-black">
+        <div className="container px-4 px-lg-5">
+          <div className="row gx-4 gx-lg-5">
+            <div className="col-md-4 mb-3 mb-md-0">
+              <div className="card py-4 h-100">
+                <div className="card-body text-center">
+                  <i className="fas fa-map-marked-alt text-primary mb-2"></i>
+                  <h4 className="text-uppercase m-0">Founder's Names</h4>
+                  <hr className="my-4 mx-auto" />
+                  <div className="small text-black-50">
+                    Samuel Sylvester <br></br> Arthur Tchaye
+                  </div>
                 </div>
-                <div className="social d-flex justify-content-center">
-                    <a className="mx-2" href="#!"><img src="/img/twitter.svg" className="fab fa-twitter" /></a>
-                    <a className="mx-2" href="#!"><img src="/img/facebook.png" className="fab fa-twitter" /></a>
-                    <a className="mx-2" href="#!"><img src="/img/github.svg" className="fab fa-twitter" /></a>
-                </div>
+              </div>
             </div>
-        </section>
-        
-        <footer className="footer bg-black small text-center text-white-50"><div className="container px-4 px-lg-5">Copyright &copy; GovTech 2024</div></footer>
+            <div className="col-md-4 mb-3 mb-md-0">
+              <div className="card py-4 h-100">
+                <div className="card-body text-center">
+                  <i className="fas fa-envelope text-primary mb-2"></i>
+                  <h4 className="text-uppercase m-0">Founder's Emails</h4>
+                  <hr className="my-4 mx-auto" />
+                  <div className="small text-black-50">
+                    <a href="#!">samsylvester09@gmail.com</a><br></br><a href="#!">samsylvester09@gmail.com</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4 mb-3 mb-md-0">
+              <div className="card py-4 h-100">
+                <div className="card-body text-center">
+                  <i className="fas fa-mobile-alt text-primary mb-2"></i>
+                  <h4 className="text-uppercase m-0">Github Links</h4>
+                  <hr className="my-4 mx-auto" />
+                  <div className="small text-black-50">
+                  <a href="#!">Sylvester009</a><br></br><a href="#!">Fchaye</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <footer className="footer bg-black small text-center text-white-50">
+        <div className="container px-4 px-lg-5">
+          Copyright &copy; GovTech 2024
+        </div>
+      </footer>
     </div>
   );
 };
