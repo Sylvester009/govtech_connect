@@ -6,9 +6,9 @@
 
 GovTech Connect is a revolutionary platform designed to foster collaboration between government agencies and tech professionals. Inspired by a personal passion for leveraging technology for public good, GovTech Connect aims to streamline the process of project procurement and talent acquisition in the public sector.
 
-- **Deployed Site:** [GovTech Connect](your_deployed_project_link)
-- **Final Project Blog Article:** [GovTech Connect Blog Post](your_blog_post_link)
-- **Author LinkedIn:** [Your LinkedIn](your_linkedin_profile), [John Doe LinkedIn](john_doe_linkedin_profile)
+- **Deployed Site:** [GovTech Connect](ninestazconnect.vercel.app)
+- **Final Project Blog Article:** [GovTech Connect Blog Post](https://www.linkedin.com/pulse/introducing-govtech-connect-sylvester-samuel-jjjqc/)
+- **Author LinkedIn:** [Your LinkedIn]([your_linkedin_profile](https://www.linkedin.com/in/ninestars/)), [Arthur Tchaye LinkedIn](Arthur linkedin_profile)
 
 ## Inspiration and Technical Challenge
 
@@ -29,21 +29,25 @@ To get a local copy up and running, follow these steps:
 1. **Clone the Repository:**
   ```sh
    git clone https://github.com/yourusername/govtech-connect.git
+  ```
 
 2. **Navigate to the Project Directory:**
 
-   ```sh
+  ```sh
 cd govtech-connect
 Install Dependencies:
+  ```
 
    ```sh
 npm install
 Start the Development Server:
+   ```
 
    ```sh
 npm run dev
 Open the App in Your Browser:
 Navigate to http://localhost:3000 to see the application in action.
+   ```
 
 ## Usage
 
